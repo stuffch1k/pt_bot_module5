@@ -3,7 +3,7 @@ version: '3'
 services:
   bot:
     container_name: bot_image
-    image: 192.168.43.65:5000/bot_image
+    image: bot_image
     build: bot/.
     env_file: .env
     volumes:
@@ -14,7 +14,7 @@ services:
 
   database:
     container_name: db_image
-    image: 192.168.43.65:5000/db_image
+    image: db_image
     build: db/.
     networks:
       network_bot:
@@ -44,9 +44,10 @@ services:
       -c archive_mode=on
       -c archive_command='cp %p /oracle/pg_data/archive/%f'
       -c wal_log_hints=on
+
   db_repl_image:
     container_name: db_repl_image
-    image: 192.168.43.65:5000/db_repl_image
+    image: db_repl_image
     build: db_repl/.
     ports:
       - "5433:5432"
