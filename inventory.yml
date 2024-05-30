@@ -1,0 +1,43 @@
+all:
+  hosts:
+    host01:
+      ansible_host: 192.168.56.109
+      ansible_user: ansible
+      ansible_password: ans
+      dir: ../
+      DB_DATABASE: db_contact
+      DB_REPL_USER: repl_user
+      DB_REPL_PASSWORD: repl_password
+      DB_USER: postgres
+      DB_PASSWORD: Qq12345
+      POSTGRES_VERSION: 15
+      DB_PORT: 5432
+      DB_PORT_SSH: 22
+
+    host02:
+      ansible_host: 192.168.56.110
+      ansible_user: ansible
+      ansible_password: ans
+      DB_HOST: 192.168.56.109 
+      DB_REPL_USER: repl_user
+      DB_REPL_PASSWORD: repl_password
+      POSTGRES_VERSION: 15
+      DB_PORT: 5432
+
+    host03:
+      ansible_host: 192.168.56.102
+      ansible_user: ansible
+      ansible_password: ans
+      dir: /home/ansible/bot 
+      TOKEN: 'your_bot_token'
+      RM_HOST: 192.168.56.109
+      RM_PORT: 22
+      RM_USER: kali
+      RM_PASSWORD: kali
+      DB_HOST: 192.168.56.109 
+      DB_PORT: 5432
+      DB_PORT_SSH: 22
+      DB_USER: postgres
+      DB_PASSWORD: Qq12345
+      DB_DATABASE: db_contact
+      POSTGRES_VERSION: 15
